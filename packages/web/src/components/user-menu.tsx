@@ -8,9 +8,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { hardReload } from "@/lib/app-update";
 import { signOut, useAuthSession } from "@/lib/auth";
 import { appQueryClient } from "@/lib/query-client";
-import { IconLogout, IconUserCircle } from "@tabler/icons-react";
+import { IconLogout, IconRefresh, IconUserCircle } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
 
 export function UserMenu() {
@@ -53,6 +54,15 @@ export function UserMenu() {
           </DropdownMenuLabel>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
+        <DropdownMenuItem onClick={() => void hardReload()}>
+          <IconRefresh />
+          <span className="flex flex-1 items-center justify-between gap-3">
+            {t("userMenu.reloadApp")}
+            <span className="text-2xs text-foreground/70">
+              {t("userMenu.version", { version: __APP_VERSION__ })}
+            </span>
+          </span>
+        </DropdownMenuItem>
         <DropdownMenuItem onClick={() => void handleSignOut()}>
           <IconLogout />
           {t("userMenu.signOut")}

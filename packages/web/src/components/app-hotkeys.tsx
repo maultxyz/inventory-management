@@ -3,6 +3,7 @@ import {
   HOTKEY_ROUTES,
   HOTKEY_SEARCH_ATTRIBUTE,
 } from "@/lib/constants/hotkeys";
+import { hardReload } from "@/lib/app-update";
 import { focusHotkeySearch } from "@/lib/hotkeys";
 import { toast } from "@/lib/toast";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +19,7 @@ export function AppHotkeys() {
       }
     },
     dismissToasts: () => toast.dismiss(),
+    reloadApp: () => void hardReload(),
     goOverview: go(HOTKEY_ROUTES.goOverview),
     goScan: go(HOTKEY_ROUTES.goScan),
     goItems: go(HOTKEY_ROUTES.goItems),

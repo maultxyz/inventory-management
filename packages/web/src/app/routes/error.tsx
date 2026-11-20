@@ -1,15 +1,26 @@
 import { Button } from "@/components/ui/button";
+import {
+  hardReload,
+  isStaleChunkError,
+  reloadOnceForStaleChunks,
+} from "@/lib/app-update";
 import { MAIN_CONTENT_ID } from "@/lib/constants/a11y";
 import { PAGE_TITLE_CLASS } from "@/lib/constants/nav";
 import { IconBug, IconRefresh } from "@tabler/icons-react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { isRouteErrorResponse, Link, useRouteError } from "react-router-dom";
 
 export default function ErrorPage() {
   const { t } = useTranslation("common");
   const error = useRouteError();
+  const isReloadingForStaleChunks = useState(
+    () => isStaleChunkError(error) && reloadOnceForStaleChunks(),
+  )[0];
 
   console.error(error);
+
+  if (isReloadingForStaleChunks) return null;
 
   const statusText = isRouteErrorResponse(error)
     ? `${error.status} ${error.statusText}`
@@ -42,7 +53,7 @@ export default function ErrorPage() {
         </pre>
       )}
       <div className="flex items-center gap-1.5">
-        <Button variant="outline" onClick={() => window.location.reload()}>
+        <Button variant="outline" onClick={() => void hardReload()}>
           <IconRefresh />
           {t("errorPage.reload")}
         </Button>

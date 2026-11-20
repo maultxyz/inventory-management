@@ -30,14 +30,13 @@ export function createWebAppRouter(webDistDir: string) {
         },
       }),
     )
+    .get("/assets/*", (c) => c.notFound())
     .use(
       "*",
       serveStatic({
         root: webDistDir,
-        onFound: (path, c) => {
-          if (path.endsWith(".html")) {
-            c.header("Cache-Control", REVALIDATED_CACHE_CONTROL);
-          }
+        onFound: (_path, c) => {
+          c.header("Cache-Control", REVALIDATED_CACHE_CONTROL);
         },
       }),
     )

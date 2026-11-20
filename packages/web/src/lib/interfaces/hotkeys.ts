@@ -12,6 +12,7 @@ export type HotkeyId =
   | "showShortcuts"
   | "focusSearch"
   | "dismissToasts"
+  | "reloadApp"
   | "goOverview"
   | "goScan"
   | "goItems"

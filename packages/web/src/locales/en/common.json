@@ -37,7 +37,13 @@
   "userMenu": {
     "open": "Account menu",
     "signedInAs": "Signed in as",
-    "signOut": "Sign out"
+    "signOut": "Sign out",
+    "reloadApp": "Reload app",
+    "version": "Version {{version}}"
+  },
+  "appUpdate": {
+    "available": "Update",
+    "availableLabel": "A new version is available. Reload to update."
   },
   "notFound": {
     "title": "Page not found",
@@ -88,6 +94,7 @@
       "showShortcuts": "Show keyboard shortcuts",
       "focusSearch": "Search items",
       "dismissToasts": "Clear all notifications",
+      "reloadApp": "Reload the app and get the latest version",
       "goOverview": "Go to overview",
       "goScan": "Go to scan",
       "goItems": "Go to items",

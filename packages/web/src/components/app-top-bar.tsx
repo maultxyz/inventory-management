@@ -1,3 +1,4 @@
+import { AppUpdateButton } from "@/components/app-update-button";
 import { BrandMark } from "@/components/brand-mark";
 import { KeyboardShortcutsButton } from "@/components/keyboard-shortcuts-dialog";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -15,6 +16,7 @@ export function AppTopBar() {
         <BrandMark />
       </Link>
       <div className="flex shrink-0 items-center gap-0.5 text-foreground">
+        <AppUpdateButton />
         <KeyboardShortcutsButton />
         <ThemeToggle />
         <UserMenu />
