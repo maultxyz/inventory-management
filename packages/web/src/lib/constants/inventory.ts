@@ -109,3 +109,6 @@ export const EMPTY_ADJUST_STOCK_FORM: AdjustStockDialogFormValues = {
 
 export const DASHBOARD_RESTOCK_LIMIT = 8;
 export const DASHBOARD_RECENT_MOVEMENTS_LIMIT = 8;
+
+export const FILTER_SELECT_TRIGGER_CLASS =
+  "max-sm:w-auto max-sm:min-w-0 max-sm:flex-1";

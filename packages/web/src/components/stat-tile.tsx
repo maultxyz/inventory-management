@@ -8,7 +8,7 @@ export function StatTile({
   caption,
 }: StatTileProps) {
   return (
-    <div className="flex min-w-0 flex-col gap-0.5 rounded-card border bg-card p-3 md:p-2.5">
+    <div className="flex min-w-0 flex-col gap-0.5 rounded-card border bg-card p-3 md:p-2.5 tablet:p-3">
       <dt className="truncate text-xs text-foreground/70">{label}</dt>
       <dd
         className={cn(

@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export function AppTopBar() {
   return (
-    <header className="flex h-8 shrink-0 items-center justify-between gap-2 px-2 max-md:h-12 max-md:px-3">
+    <header className="flex h-8 shrink-0 items-center justify-between gap-2 px-2 touch:h-12 touch:px-3">
       <Link
         to={HOME_PATH}
         className="rounded-sm outline-none focus-visible:ring-2 focus-visible:ring-ring"

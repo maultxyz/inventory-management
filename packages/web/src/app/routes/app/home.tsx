@@ -84,7 +84,7 @@ export default function HomePage() {
               <Button onClick={() => setIsRemoveDialogOpen(true)}>
                 <IconPackageExport />
                 {t("kits.remove.open")}
-                <HotkeyHint id="removeBuildUnits" className="max-md:hidden" />
+                <HotkeyHint id="removeBuildUnits" className="touch:hidden" />
               </Button>
             )
           }

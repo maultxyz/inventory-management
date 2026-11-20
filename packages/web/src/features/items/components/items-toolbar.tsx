@@ -7,7 +7,10 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { HOTKEY_SEARCH_ATTRIBUTE } from "@/lib/constants/hotkeys";
-import { STOCK_STATUS_FILTERS } from "@/lib/constants/inventory";
+import {
+  FILTER_SELECT_TRIGGER_CLASS,
+  STOCK_STATUS_FILTERS,
+} from "@/lib/constants/inventory";
 import { ALL_TAGS_FILTER } from "@/lib/constants/tags";
 import type {
   ItemsToolbarProps,
@@ -36,7 +39,7 @@ export function ItemsToolbar({
       <div className="relative min-w-0 flex-1 sm:max-w-sm">
         <IconSearch
           aria-hidden
-          className="pointer-events-none absolute top-1/2 left-2.5 size-3.5 -translate-y-1/2 text-muted-foreground max-md:left-3 max-md:size-4"
+          className="pointer-events-none absolute top-1/2 left-2.5 size-3.5 -translate-y-1/2 text-muted-foreground touch:left-3 touch:size-4"
         />
         <Input
           type="search"
@@ -49,50 +52,58 @@ export function ItemsToolbar({
           onKeyDown={(event) => {
             if (event.key === "Escape") event.currentTarget.blur();
           }}
-          className="pl-8 max-md:pl-10"
+          className="pl-8 touch:pl-10"
           {...{ [HOTKEY_SEARCH_ATTRIBUTE]: "" }}
         />
       </div>
-      {tags.length > 0 && (
+      <div className="flex gap-2 sm:contents">
+        {tags.length > 0 && (
+          <Select
+            items={tagOptions}
+            value={filters.tag}
+            onValueChange={(tag) =>
+              onFiltersChange({ tag: tag ?? ALL_TAGS_FILTER })
+            }
+          >
+            <SelectTrigger
+              aria-label={t("items.toolbar.tagLabel")}
+              className={FILTER_SELECT_TRIGGER_CLASS}
+            >
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              {tagOptions.map((option) => (
+                <SelectItem key={option.value} value={option.value}>
+                  {option.label}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        )}
         <Select
-          items={tagOptions}
-          value={filters.tag}
-          onValueChange={(tag) =>
-            onFiltersChange({ tag: tag ?? ALL_TAGS_FILTER })
+          items={statusOptions}
+          value={filters.status}
+          onValueChange={(status) =>
+            onFiltersChange({
+              status: (status as StockStatusFilter | null) ?? "all",
+            })
           }
         >
-          <SelectTrigger aria-label={t("items.toolbar.tagLabel")}>
+          <SelectTrigger
+            aria-label={t("items.toolbar.statusLabel")}
+            className={FILTER_SELECT_TRIGGER_CLASS}
+          >
             <SelectValue />
           </SelectTrigger>
           <SelectContent>
-            {tagOptions.map((option) => (
+            {statusOptions.map((option) => (
               <SelectItem key={option.value} value={option.value}>
                 {option.label}
               </SelectItem>
             ))}
           </SelectContent>
         </Select>
-      )}
-      <Select
-        items={statusOptions}
-        value={filters.status}
-        onValueChange={(status) =>
-          onFiltersChange({
-            status: (status as StockStatusFilter | null) ?? "all",
-          })
-        }
-      >
-        <SelectTrigger aria-label={t("items.toolbar.statusLabel")}>
-          <SelectValue />
-        </SelectTrigger>
-        <SelectContent>
-          {statusOptions.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
-              {option.label}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+      </div>
     </div>
   );
 }

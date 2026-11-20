@@ -31,18 +31,18 @@ const buttonVariants = cva(
       },
       size: {
         default:
-          "h-7 gap-1 px-2.5 data-icon-start:pl-2 data-icon-end:pr-2 data-kbd-end:pr-1 [&_svg:not([class*='size-'])]:size-3.5 max-md:h-10 max-md:gap-2 max-md:px-4 max-md:text-sm max-md:data-icon-start:pl-3 max-md:data-icon-end:pr-3 max-md:[&_svg:not([class*='size-'])]:size-4",
+          "h-7 gap-1 px-2.5 data-icon-start:pl-2 data-icon-end:pr-2 data-kbd-end:pr-1 [&_svg:not([class*='size-'])]:size-3.5 touch:h-10 touch:gap-2 touch:px-4 touch:text-sm touch:data-kbd-end:pr-4 touch:data-icon-start:pl-3 touch:data-icon-end:pr-3 touch:[&_svg:not([class*='size-'])]:size-4",
         xs: "h-5 gap-1 rounded-md px-1.5 text-2xs data-icon-start:pl-1 data-icon-end:pr-1 [&_svg:not([class*='size-'])]:size-3",
-        sm: "h-6 gap-1 px-2 text-xs data-icon-start:pl-1.5 data-icon-end:pr-1.5 data-kbd-end:pr-0.5 [&_svg:not([class*='size-'])]:size-3 max-md:h-8 max-md:px-3 max-md:text-sm max-md:data-icon-start:pl-2.5 max-md:data-icon-end:pr-2.5 max-md:[&_svg:not([class*='size-'])]:size-4",
-        lg: "h-8 gap-1.5 px-3 data-icon-start:pl-2.5 data-icon-end:pr-2.5 data-kbd-end:pr-1.5 [&_svg:not([class*='size-'])]:size-4 max-md:h-11 max-md:px-5 max-md:text-sm max-md:data-icon-start:pl-4 max-md:data-icon-end:pr-4",
-        xl: "h-12 gap-1.5 px-3 data-icon-start:pl-2.5 data-icon-end:pr-2.5 data-kbd-end:pr-1.5 [&_svg:not([class*='size-'])]:size-4 max-md:px-5 max-md:text-sm max-md:data-icon-start:pl-4 max-md:data-icon-end:pr-4",
+        sm: "h-6 gap-1 px-2 text-xs data-icon-start:pl-1.5 data-icon-end:pr-1.5 data-kbd-end:pr-0.5 [&_svg:not([class*='size-'])]:size-3 touch:h-8 touch:px-3 touch:text-sm touch:data-kbd-end:pr-3 touch:data-icon-start:pl-2.5 touch:data-icon-end:pr-2.5 touch:[&_svg:not([class*='size-'])]:size-4",
+        lg: "h-8 gap-1.5 px-3 data-icon-start:pl-2.5 data-icon-end:pr-2.5 data-kbd-end:pr-1.5 [&_svg:not([class*='size-'])]:size-4 touch:h-11 touch:px-5 touch:text-sm touch:data-kbd-end:pr-5 touch:data-icon-start:pl-4 touch:data-icon-end:pr-4",
+        xl: "h-12 gap-1.5 px-3 data-icon-start:pl-2.5 data-icon-end:pr-2.5 data-kbd-end:pr-1.5 [&_svg:not([class*='size-'])]:size-4 touch:px-5 touch:text-sm touch:data-kbd-end:pr-5 touch:data-icon-start:pl-4 touch:data-icon-end:pr-4",
         marketing:
-          "h-7 gap-1 px-2.5 text-sm data-icon-start:pl-2 data-icon-end:pr-2 data-kbd-end:pr-1 [&_svg:not([class*='size-'])]:size-3.5 max-md:h-10 max-md:gap-2 max-md:px-4 max-md:data-icon-start:pl-3 max-md:data-icon-end:pr-3 max-md:[&_svg:not([class*='size-'])]:size-4",
-        icon: "size-7 [&_svg:not([class*='size-'])]:size-3.5 max-md:size-10 max-md:[&_svg:not([class*='size-'])]:size-5",
+          "h-7 gap-1 px-2.5 text-sm data-icon-start:pl-2 data-icon-end:pr-2 data-kbd-end:pr-1 [&_svg:not([class*='size-'])]:size-3.5 touch:h-10 touch:gap-2 touch:px-4 touch:data-kbd-end:pr-4 touch:data-icon-start:pl-3 touch:data-icon-end:pr-3 touch:[&_svg:not([class*='size-'])]:size-4",
+        icon: "size-7 [&_svg:not([class*='size-'])]:size-3.5 touch:size-10 touch:[&_svg:not([class*='size-'])]:size-5",
         "icon-xs": "size-5 rounded-md [&_svg:not([class*='size-'])]:size-3",
-        "icon-sm": "size-6 [&_svg:not([class*='size-'])]:size-3 max-md:size-8 max-md:[&_svg:not([class*='size-'])]:size-4",
+        "icon-sm": "size-6 [&_svg:not([class*='size-'])]:size-3 touch:size-8 touch:[&_svg:not([class*='size-'])]:size-4",
         "icon-compact": "size-6 [&_svg:not([class*='size-'])]:size-3",
-        "icon-lg": "size-8 [&_svg:not([class*='size-'])]:size-4 max-md:size-10 max-md:[&_svg:not([class*='size-'])]:size-5",
+        "icon-lg": "size-8 [&_svg:not([class*='size-'])]:size-4 touch:size-10 touch:[&_svg:not([class*='size-'])]:size-5",
       },
     },
     defaultVariants: {

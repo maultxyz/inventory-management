@@ -37,7 +37,7 @@ export function KeyboardShortcutsButton() {
       <Button
         variant="ghost"
         size="icon"
-        className="max-md:hidden"
+        className="touch:hidden"
         aria-label={t("hotkeys.title")}
         title={t("hotkeys.title")}
         onClick={() => setOpen(true)}

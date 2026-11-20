@@ -93,6 +93,7 @@ export interface BulkTagsDialogProps {
 
 export interface ItemRowActionsProps extends ItemActionHandlers {
   item: InventoryItem;
+  layout?: "row" | "card";
 }
 
 export interface ItemsToolbarProps {

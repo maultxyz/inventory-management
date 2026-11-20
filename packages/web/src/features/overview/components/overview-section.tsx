@@ -18,7 +18,7 @@ export function OverviewSection({
       aria-labelledby={headingId}
       className={cn(
         "flex min-w-0 flex-col gap-2",
-        !isOnCanvas && "rounded-card border bg-card p-4 md:p-2.5",
+        !isOnCanvas && "rounded-card border bg-card p-4 md:p-2.5 tablet:p-3.5",
       )}
     >
       <div className="flex items-center justify-between gap-2">

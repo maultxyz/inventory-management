@@ -10,7 +10,7 @@ export function AppNav() {
   return (
     <nav
       aria-label={t("a11y.mainNavigation")}
-      className="hidden w-52 shrink-0 flex-col gap-px border-r p-1 md:flex"
+      className="hidden w-52 shrink-0 flex-col gap-px border-r p-1 md:flex tablet:gap-0.5 tablet:p-1.5 tablet-portrait:hidden"
     >
       {NAV_ITEMS.map(({ to, icon: Icon, labelKey }) => (
         <NavLink

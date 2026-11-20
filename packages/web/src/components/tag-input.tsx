@@ -61,7 +61,7 @@ export function TagInput({
                 type="button"
                 aria-label={t("tags.remove", { tag })}
                 onClick={() => removeTag(tag)}
-                className="flex size-4 items-center justify-center rounded-sm text-foreground/70 outline-none hover:bg-foreground/10 hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring max-md:size-6"
+                className="flex size-4 items-center justify-center rounded-sm text-foreground/70 outline-none hover:bg-foreground/10 hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring touch:size-6"
               >
                 <IconX aria-hidden className="size-3" />
               </button>

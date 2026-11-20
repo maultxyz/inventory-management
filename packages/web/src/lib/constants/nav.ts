@@ -23,7 +23,7 @@ export const COMPACT_LAYOUT_MAX_WIDTH_PX = 1023;
 export const PAGE_TITLE_CLASS =
   "font-heading text-sm font-semibold text-foreground";
 export const PAGE_BODY_CLASS =
-  "mx-auto flex w-full max-w-6xl flex-col gap-4 p-4 md:gap-3 md:px-4 md:py-3";
+  "mx-auto flex w-full max-w-6xl flex-col gap-4 p-4 md:gap-3 md:px-4 md:py-3 tablet:gap-4 tablet:p-5";
 export const SIDEBAR_IDLE_ITEM_CLASS =
   "text-sidebar-foreground hover:bg-sidebar-accent dark:hover:bg-sidebar-accent aria-expanded:bg-sidebar-accent";
 export const SIDEBAR_SELECTED_ITEM_CLASS =
@@ -32,5 +32,5 @@ export const SIDEBAR_EXPANDED_ITEM_CLASS =
   "w-full justify-start gap-2 px-2 border-0 font-normal";
 
 export const MOBILE_NAV_TAB_CLASS =
-  "flex h-14 flex-1 flex-col items-center justify-center gap-0.5 text-2xs leading-tight font-medium text-sidebar-foreground transition-colors active:bg-sidebar-accent";
+  "flex h-14 flex-1 flex-col items-center justify-center gap-0.5 text-2xs leading-tight font-medium text-sidebar-foreground transition-colors active:bg-sidebar-accent tablet:h-12 tablet:flex-row tablet:gap-2 tablet:text-sm";
 export const MOBILE_NAV_TAB_ACTIVE_CLASS = "bg-sidebar-selected text-foreground";

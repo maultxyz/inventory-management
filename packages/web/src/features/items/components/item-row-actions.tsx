@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { purchaseUrlOf } from "@/features/items/lib/purchase-link";
 import type { ItemRowActionsProps } from "@/lib/interfaces/inventory";
+import { cn } from "@/lib/utils";
 import {
   IconDots,
   IconPencil,
@@ -19,6 +20,7 @@ import { useTranslation } from "react-i18next";
 
 export function ItemRowActions({
   item,
+  layout = "row",
   onAdjustStock,
   onEdit,
   onDelete,
@@ -26,8 +28,15 @@ export function ItemRowActions({
 }: ItemRowActionsProps) {
   const { t } = useTranslation("inventory");
   const purchaseUrl = purchaseUrlOf(item);
+  const isCard = layout === "card";
+  const secondaryVariant = isCard ? "outline" : "ghost";
   return (
-    <div className="flex items-center justify-end gap-1.5">
+    <div
+      className={cn(
+        "flex items-center justify-end gap-1.5",
+        isCard && "w-full",
+      )}
+    >
       {purchaseUrl && (
         <a
           href={purchaseUrl}
@@ -35,13 +44,17 @@ export function ItemRowActions({
           rel="noopener noreferrer"
           aria-label={t("items.actions.buyMoreOf", { name: item.name })}
           title={t("items.actions.buyMore")}
-          className={buttonVariants({ variant: "ghost", size: "icon" })}
+          className={cn(
+            buttonVariants({ variant: secondaryVariant, size: "icon" }),
+            isCard && "order-1",
+          )}
         >
           <IconShoppingCart aria-hidden />
         </a>
       )}
       <Button
-        variant="outline"
+        variant={isCard ? "default" : "outline"}
+        className={cn(isCard && "flex-1")}
         aria-label={t("items.actions.adjustStockFor", { name: item.name })}
         onClick={() => onAdjustStock(item)}
       >
@@ -52,8 +65,9 @@ export function ItemRowActions({
         <DropdownMenuTrigger
           render={
             <Button
-              variant="ghost"
+              variant={secondaryVariant}
               size="icon"
+              className={cn(isCard && "order-2")}
               aria-label={t("items.actions.more", { name: item.name })}
             >
               <IconDots />

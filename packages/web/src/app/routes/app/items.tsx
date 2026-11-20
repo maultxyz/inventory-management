@@ -55,6 +55,7 @@ export default function ItemsPage() {
   const { t } = useTranslation("inventory");
   const { t: tCommon } = useTranslation("common");
   const isCompactLayout = useIsMobile(COMPACT_LAYOUT_MAX_WIDTH_PX);
+  const isPhoneLayout = useIsMobile();
   const { items, isPending, isError, refetch } = useItems();
   const dialogs = useItemDialogs();
   const labelPrinting = useLabelPrinting();
@@ -158,7 +159,7 @@ export default function ItemsPage() {
     <Button onClick={dialogs.openAddItem}>
       <IconPlus />
       {t("items.add")}
-      <HotkeyHint id="itemNew" className="max-md:hidden" />
+      <HotkeyHint id="itemNew" className="touch:hidden" />
     </Button>
   );
 
@@ -173,11 +174,20 @@ export default function ItemsPage() {
               {shownItems.length > 0 && (
                 <Button
                   variant="outline"
+                  size={isPhoneLayout ? "icon" : "default"}
+                  aria-label={
+                    isPhoneLayout ? t("labels.print.open") : undefined
+                  }
                   onClick={() => labelPrinting.openPrintLabels(shownItems)}
                 >
                   <IconPrinter />
-                  {t("labels.print.open")}
-                  <HotkeyHint id="itemsPrintLabels" className="max-md:hidden" />
+                  {!isPhoneLayout && t("labels.print.open")}
+                  {!isPhoneLayout && (
+                    <HotkeyHint
+                      id="itemsPrintLabels"
+                      className="touch:hidden"
+                    />
+                  )}
                 </Button>
               )}
               {addItemButton}
@@ -229,7 +239,7 @@ export default function ItemsPage() {
                         })
                       : t("items.count", { count: items.length })}
                   </p>
-                  <p className="flex items-center gap-1.5 text-xs text-foreground/70 max-md:hidden">
+                  <p className="flex items-center gap-1.5 text-xs text-foreground/70 touch:hidden">
                     <HotkeyHint id="itemPrevious" />
                     <HotkeyHint id="itemNext" />
                     {t("items.keyboardHint.pick")}

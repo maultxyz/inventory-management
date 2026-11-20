@@ -131,7 +131,7 @@ function AdjustStockForm({
             >
               {option === "add" ? <IconPlus /> : <IconMinus />}
               {t(`items.adjust.directions.${option}`)}
-              <Kbd className="max-md:hidden">
+              <Kbd className="touch:hidden">
                 {option === "add" ? "+" : tCommon("hotkeys.keys.minus")}
               </Kbd>
             </Button>

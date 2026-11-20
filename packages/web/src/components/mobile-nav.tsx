@@ -12,7 +12,7 @@ export function MobileNav() {
   return (
     <nav
       aria-label={t("a11y.mainNavigation")}
-      className="flex shrink-0 border-t pb-[env(safe-area-inset-bottom)] md:hidden"
+      className="flex shrink-0 border-t pb-[env(safe-area-inset-bottom)] md:hidden tablet-portrait:flex"
     >
       {NAV_ITEMS.map(({ to, icon: Icon, labelKey }) => (
         <NavLink

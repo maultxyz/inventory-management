@@ -31,8 +31,8 @@ export function PageHeader({
           spansFullWidth ? "" : "max-w-6xl",
         )}
       >
-        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
-          <div className="flex min-w-0 items-center gap-2">
+        <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 max-sm:grid max-sm:grid-cols-[minmax(0,1fr)_auto] max-sm:gap-x-3 max-sm:gap-y-0.5">
+          <div className="flex min-w-0 items-center gap-2 max-sm:contents">
             {backTo && (
               <Button
                 variant="ghost"
@@ -46,15 +46,26 @@ export function PageHeader({
                 <IconArrowLeft />
               </Button>
             )}
-            <div className="min-w-0">
-              <h1 className={PAGE_TITLE_CLASS}>{title}</h1>
+            <div className="min-w-0 max-sm:contents">
+              <h1
+                className={cn(
+                  PAGE_TITLE_CLASS,
+                  "max-sm:self-center max-sm:text-lg",
+                )}
+              >
+                {title}
+              </h1>
               {description && (
-                <p className="text-xs text-foreground/70">{description}</p>
+                <p className="text-xs text-foreground/70 max-sm:col-span-2">
+                  {description}
+                </p>
               )}
             </div>
           </div>
           {actions && (
-            <div className="flex flex-wrap items-center gap-1.5">{actions}</div>
+            <div className="flex flex-wrap items-center gap-1.5 max-sm:col-start-2 max-sm:row-start-1 max-sm:flex-nowrap max-sm:justify-end">
+              {actions}
+            </div>
           )}
         </div>
         {children}

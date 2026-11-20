@@ -30,26 +30,26 @@ export function ItemSelectionBar({
       <Button variant="outline" onClick={onAdjustStock}>
         <IconPlusMinus />
         {t("items.actions.adjustStock")}
-        <HotkeyHint id="itemAdjust" className="max-md:hidden" />
+        <HotkeyHint id="itemAdjust" className="touch:hidden" />
       </Button>
       <Button variant="outline" onClick={onEditTags}>
         <IconTag />
         {t("items.bulk.editTags")}
-        <HotkeyHint id="itemsEditTags" className="max-md:hidden" />
+        <HotkeyHint id="itemsEditTags" className="touch:hidden" />
       </Button>
       <Button variant="outline" onClick={onPrintLabels}>
         <IconPrinter />
         {t("labels.print.open")}
-        <HotkeyHint id="itemPrintLabel" className="max-md:hidden" />
+        <HotkeyHint id="itemPrintLabel" className="touch:hidden" />
       </Button>
       <Button variant="destructive" onClick={onDelete}>
         <IconTrash />
         {t("items.actions.delete")}
-        <HotkeyHint id="itemDelete" className="max-md:hidden" />
+        <HotkeyHint id="itemDelete" className="touch:hidden" />
       </Button>
       <Button variant="ghost" onClick={onClear}>
         {t("items.bulk.clear")}
-        <HotkeyHint id="clearSelection" className="max-md:hidden" />
+        <HotkeyHint id="clearSelection" className="touch:hidden" />
       </Button>
     </div>
   );

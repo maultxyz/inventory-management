@@ -10,7 +10,7 @@ export function StockMovementList({ movements }: StockMovementListProps) {
       {movements.map((movement) => (
         <li
           key={movement.guid}
-          className="flex items-center justify-between gap-3 py-2"
+          className="flex items-center justify-between gap-3 py-2 touch:py-3"
         >
           <div className="flex min-w-0 flex-col">
             <span className="truncate text-sm font-medium text-foreground">

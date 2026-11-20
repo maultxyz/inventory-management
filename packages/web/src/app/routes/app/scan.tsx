@@ -130,7 +130,7 @@ export default function ScanPage() {
                   </Callout>
                 )}
               </div>
-              <section className="flex flex-col gap-2 rounded-card border bg-card p-4 md:p-2.5">
+              <section className="flex flex-col gap-2 rounded-card border bg-card p-4 md:p-2.5 tablet:p-3.5">
                 <h2 className="font-heading text-sm font-semibold text-foreground">
                   {t("scan.lastScanned.heading")}
                 </h2>
@@ -166,7 +166,7 @@ export default function ScanPage() {
                     >
                       <IconPlusMinus />
                       {t("items.actions.adjustStock")}
-                      <HotkeyHint id="scanAdjustLast" className="max-md:hidden" />
+                      <HotkeyHint id="scanAdjustLast" className="touch:hidden" />
                     </Button>
                   </>
                 ) : (
@@ -175,7 +175,7 @@ export default function ScanPage() {
                   </p>
                 )}
               </section>
-              <section className="flex flex-col gap-2 rounded-card border bg-card p-4 md:p-2.5">
+              <section className="flex flex-col gap-2 rounded-card border bg-card p-4 md:p-2.5 tablet:p-3.5">
                 <h2 className="font-heading text-sm font-semibold text-foreground">
                   {t("scan.howTo.heading")}
                 </h2>
