@@ -1,0 +1,11 @@
+node_modules/
+.pnpm-debug.log*
+npm-debug.log*
+
+.env
+
+*.tsbuildinfo
+**/.turbo/**
+**/dist/**
+.idea/
+.DS_Store

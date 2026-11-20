@@ -1,0 +1,55 @@
+import { Button } from "@/components/ui/button";
+import { MAIN_CONTENT_ID } from "@/lib/constants/a11y";
+import { PAGE_TITLE_CLASS } from "@/lib/constants/nav";
+import { IconBug, IconRefresh } from "@tabler/icons-react";
+import { useTranslation } from "react-i18next";
+import { isRouteErrorResponse, Link, useRouteError } from "react-router-dom";
+
+export default function ErrorPage() {
+  const { t } = useTranslation("common");
+  const error = useRouteError();
+
+  console.error(error);
+
+  const statusText = isRouteErrorResponse(error)
+    ? `${error.status} ${error.statusText}`
+    : null;
+
+  const detail =
+    import.meta.env.DEV && error instanceof Error
+      ? (error.stack ?? error.message)
+      : null;
+
+  return (
+    <main
+      id={MAIN_CONTENT_ID}
+      tabIndex={-1}
+      className="flex min-h-dvh flex-col items-center justify-center gap-4 p-4 text-center outline-none"
+    >
+      <IconBug aria-hidden className="size-16 text-foreground/70" />
+      <div className="flex flex-col gap-1">
+        <h1 className={PAGE_TITLE_CLASS}>{t("errorPage.title")}</h1>
+        <p className="text-xs text-foreground/70">
+          {t("errorPage.description")}
+        </p>
+        {statusText && (
+          <p className="font-mono text-xs text-foreground/70">{statusText}</p>
+        )}
+      </div>
+      {detail && (
+        <pre className="max-w-lg overflow-auto rounded-lg bg-foreground/6 p-3 text-left text-2xs text-foreground/70">
+          {detail}
+        </pre>
+      )}
+      <div className="flex items-center gap-1.5">
+        <Button variant="outline" onClick={() => window.location.reload()}>
+          <IconRefresh />
+          {t("errorPage.reload")}
+        </Button>
+        <Button nativeButton={false} render={<Link to="/" />}>
+          {t("backHome")}
+        </Button>
+      </div>
+    </main>
+  );
+}

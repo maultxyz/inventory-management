@@ -1,0 +1,123 @@
+{
+  "appName": "Stockroom",
+  "nav": {
+    "overview": "Overview",
+    "scan": "Scan",
+    "items": "Items",
+    "activity": "Activity"
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content",
+    "close": "Close",
+    "retry": "Retry",
+    "notifications": "Notifications",
+    "closeNotification": "Close notification",
+    "mainNavigation": "Main",
+    "loading": "Loading"
+  },
+  "validation": {
+    "nameRequired": "Enter a name.",
+    "textTooLong": "Keep this under {{max}} characters.",
+    "wholeNumber": "Must be a whole number.",
+    "atLeast": "Must be at least {{min}}.",
+    "atMost": "Must be at most {{max}}.",
+    "amountInvalid": "Enter an amount like 12.50.",
+    "quantityChangeRequired": "Enter a quantity other than 0.",
+    "notEnoughStock": "Only {{available}} in stock.",
+    "linkInvalid": "Enter a full link starting with http:// or https://.",
+    "tooManyTags": "Add no more than {{max}} tags.",
+    "tagRequired": "Add at least one tag."
+  },
+  "theme": {
+    "toggle": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
+  "userMenu": {
+    "open": "Account menu",
+    "signedInAs": "Signed in as",
+    "signOut": "Sign out"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist or has been moved."
+  },
+  "errorPage": {
+    "title": "Something went wrong",
+    "description": "An unexpected error occurred. Try reloading the page.",
+    "reload": "Reload page"
+  },
+  "backHome": "Back to home",
+  "mobileMenu": {
+    "back": "Back"
+  },
+  "loadingApp": "Loading Stockroom",
+  "cancel": "Cancel",
+  "hotkeys": {
+    "title": "Keyboard shortcuts",
+    "description": "Shortcuts are ignored while you are typing in a field or a dialog is open. Press Esc to leave a field.",
+    "then": "then",
+    "off": "Off",
+    "singleKey": {
+      "label": "Single-key shortcuts",
+      "hint": "When off, only Escape, Delete and the arrow keys work. Saved in this browser."
+    },
+    "keys": {
+      "space": "Space",
+      "shift": "Shift",
+      "ctrl": "Ctrl",
+      "left": "←",
+      "right": "→",
+      "up": "↑",
+      "down": "↓",
+      "escape": "Esc",
+      "enter": "Enter",
+      "delete": "Del",
+      "minus": "−"
+    },
+    "groups": {
+      "general": "General",
+      "navigation": "Navigation",
+      "items": "Items page",
+      "stockDialog": "In the stock dialog",
+      "overview": "Overview page",
+      "scan": "Scan page"
+    },
+    "actions": {
+      "showShortcuts": "Show keyboard shortcuts",
+      "focusSearch": "Search items",
+      "dismissToasts": "Clear all notifications",
+      "goOverview": "Go to overview",
+      "goScan": "Go to scan",
+      "goItems": "Go to items",
+      "goActivity": "Go to activity",
+      "itemNew": "Add an item",
+      "itemsPrintLabels": "Print labels for the items shown",
+      "itemNext": "Pick the next item",
+      "itemPrevious": "Pick the previous item",
+      "itemAdjust": "Adjust stock of the selected or picked items",
+      "itemAddStock": "Add stock to the selected or picked items",
+      "itemRemoveStock": "Remove stock from the selected or picked items",
+      "itemEdit": "Edit the picked item",
+      "itemPrintLabel": "Print labels for the selected or picked items",
+      "itemDelete": "Delete the selected or picked items",
+      "clearSelection": "Clear the selection, or unpick the item",
+      "stockDialogAdd": "Switch to adding stock (in the quantity field)",
+      "stockDialogRemove": "Switch to removing stock (in the quantity field)",
+      "stockDialogSave": "Save the adjustment",
+      "stockDialogCancel": "Cancel",
+      "removeBuildUnits": "Remove kits or modules from inventory",
+      "planThreeModuleKits": "Enter 3-module kits needed",
+      "planFiveModuleKits": "Enter 5-module kits needed",
+      "scanAdjustLast": "Adjust the last scanned item again",
+      "itemBuyMore": "Open the picked item's purchase link",
+      "itemToggleSelected": "Select or unselect the picked item",
+      "itemsSelectAll": "Select all items shown",
+      "itemsEditTags": "Edit tags of the selected or picked items"
+    }
+  },
+  "tags": {
+    "remove": "Remove tag {{tag}}"
+  }
+}

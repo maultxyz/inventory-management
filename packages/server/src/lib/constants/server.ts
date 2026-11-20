@@ -1,0 +1,9 @@
+export const API_PORT = parseInt(process.env.PORT ?? "3001");
+export const API_PATH_PREFIX = "/api";
+export const WEB_URL = process.env.WEB_URL ?? "http://localhost:5173";
+export const WEB_DIST_DIR = process.env.WEB_DIST_DIR || null;
+export const MIGRATIONS_DIR = process.env.MIGRATIONS_DIR ?? "../../drizzle";
+export const REQUEST_BODY_MAX_BYTES = 100 * 1024;
+export const IMMUTABLE_ASSET_CACHE_CONTROL =
+  "public, max-age=31536000, immutable";
+export const REVALIDATED_CACHE_CONTROL = "no-cache";

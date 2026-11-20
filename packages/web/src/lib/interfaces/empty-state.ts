@@ -1,0 +1,11 @@
+import type { ComponentType, ReactNode } from "react";
+
+export interface EmptyStateProps {
+  icon?: ComponentType<{ className?: string }>;
+  title: ReactNode;
+  description?: ReactNode;
+  action?: ReactNode;
+  size?: "default" | "compact";
+  titleAs?: "p" | "h1" | "h2" | "h3";
+  className?: string;
+}

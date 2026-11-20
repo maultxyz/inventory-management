@@ -1,0 +1,339 @@
+{
+  "status": {
+    "inStock": "In stock",
+    "lowStock": "Low stock",
+    "outOfStock": "Out of stock"
+  },
+  "reasons": {
+    "created": "Starting stock",
+    "received": "Received",
+    "sold": "Sold",
+    "returned": "Returned",
+    "damaged": "Damaged or lost",
+    "adjusted": "Count correction",
+    "packed": "Packed"
+  },
+  "overview": {
+    "title": "Overview",
+    "description": "How many kits you can pack, what is missing and what changed.",
+    "loadFailed": "Your inventory couldn't be loaded.",
+    "restock": {
+      "heading": "Needs restocking",
+      "viewAll": "View all",
+      "emptyTitle": "Nothing needs restocking",
+      "emptyDescription": "Items show up here once they reach their reorder level.",
+      "quantity": "{{quantity}} left, reorder at {{reorderLevel}}",
+      "addStock": "Add stock",
+      "addStockTo": "Add stock to {{name}}"
+    },
+    "recent": {
+      "heading": "Recent activity",
+      "viewAll": "View all",
+      "emptyTitle": "No activity yet",
+      "emptyDescription": "Stock changes show up here as you make them."
+    },
+    "welcome": {
+      "title": "Add your first item",
+      "description": "Start tracking stock by adding the things you keep on hand.",
+      "action": "Go to items"
+    }
+  },
+  "items": {
+    "title": "Items",
+    "description": "Everything you keep in stock.",
+    "add": "Add item",
+    "loadFailed": "Your items couldn't be loaded.",
+    "count_one": "{{count}} item",
+    "count_other": "{{count}} items",
+    "countFiltered": "{{shown}} of {{total}} items",
+    "empty": {
+      "title": "No items yet",
+      "description": "Add an item to start tracking how much of it you have."
+    },
+    "noMatches": {
+      "title": "No items match",
+      "description": "Try a different search or clear the filters.",
+      "clear": "Clear filters"
+    },
+    "toolbar": {
+      "searchLabel": "Search items",
+      "searchPlaceholder": "Search by name, location or tag",
+      "statusLabel": "Stock status",
+      "statusFilters": {
+        "all": "Any stock status",
+        "inStock": "In stock",
+        "needsRestock": "Needs restocking",
+        "lowStock": "Low stock",
+        "outOfStock": "Out of stock"
+      },
+      "tagLabel": "Tag",
+      "allTags": "All tags"
+    },
+    "columns": {
+      "name": "Item",
+      "location": "Location",
+      "status": "Status",
+      "quantity": "Quantity",
+      "unitCost": "Unit cost",
+      "value": "Value",
+      "actions": "Actions",
+      "tags": "Tags"
+    },
+    "noValue": "None",
+    "quantityValue": "{{quantity}} in stock",
+    "actions": {
+      "adjustStock": "Adjust stock",
+      "adjustStockFor": "Adjust stock for {{name}}",
+      "more": "More actions for {{name}}",
+      "edit": "Edit",
+      "delete": "Delete",
+      "printLabel": "Print label",
+      "buyMore": "Buy more",
+      "buyMoreOf": "Buy more {{name}}"
+    },
+    "form": {
+      "addTitle": "Add item",
+      "editTitle": "Edit item",
+      "name": "Name",
+      "namePlaceholder": "e.g. Shipping box, medium",
+      "location": "Location",
+      "locationPlaceholder": "e.g. Shelf B2",
+      "quantity": "Quantity in stock",
+      "reorderLevel": "Reorder level",
+      "reorderLevelDescription": "The item counts as low stock at or below this quantity.",
+      "notes": "Notes",
+      "optional": "optional",
+      "submitAdd": "Add item",
+      "submitEdit": "Save changes",
+      "moduleUsage": "Used in each module",
+      "feederModuleQuantity": "Feeder",
+      "deviceModuleQuantity": "Device",
+      "sortingModuleQuantity": "Sorting",
+      "moduleUsageDescription": "How many of this item go into one feeder, device and sorting module. Leave at 0 if it is not a kit part.",
+      "purchaseUrl": "Purchase link",
+      "purchaseUrlPlaceholder": "https://",
+      "lotPrice": "Lot price ({{currency}})",
+      "unitsPerLot": "Units per lot",
+      "unitCostDescription": "Unit cost is the lot price divided by the units per lot.",
+      "unitCostDerived": "Unit cost: {{unitCost}} (lot price divided by units per lot).",
+      "tags": "Tags",
+      "tagsPlaceholder": "e.g. Amazon",
+      "tagsDescription": "Use tags for where you buy this part. Press Enter or comma to add one."
+    },
+    "adjust": {
+      "title": "Adjust stock",
+      "description": "{{name}} has {{quantity}} in stock.",
+      "direction": "Change",
+      "directions": {
+        "add": "Add stock",
+        "remove": "Remove stock"
+      },
+      "quantity": "Quantity",
+      "reason": "Reason",
+      "note": "Note",
+      "notePlaceholder": "e.g. Order 1042",
+      "resulting": "Stock after this change: {{quantity}}",
+      "submit": "Save adjustment"
+    },
+    "delete": {
+      "title": "Delete {{name}}?",
+      "description": "The item is removed from your inventory. Its past stock changes stay in the activity log.",
+      "confirm": "Delete item"
+    },
+    "toasts": {
+      "added": "Added {{name}}.",
+      "saved": "Saved {{name}}.",
+      "deleted": "Deleted {{name}}.",
+      "adjusted": "{{name}} now has {{quantity}} in stock.",
+      "failed": "That didn't work. Try again."
+    },
+    "keyboardHint": {
+      "pick": "pick an item,",
+      "adjust": "adjust its stock"
+    },
+    "tagsOf": "Tags of {{name}}",
+    "bulk": {
+      "barLabel": "Actions for selected items",
+      "selected_one": "{{count}} selected",
+      "selected_other": "{{count}} selected",
+      "select": "Select {{name}}",
+      "selectAll": "Select all items shown",
+      "editTags": "Edit tags",
+      "clear": "Clear",
+      "adjustDescription_one": "Applies to the {{count}} selected item, which has {{lowest}} in stock.",
+      "adjustDescription_other": "Applies the same change to each of the {{count}} selected items. The lowest stock among them is {{lowest}}.",
+      "tags": {
+        "title": "Edit tags",
+        "descriptionOne": "Change the tags on {{name}}.",
+        "description_one": "Change the tags on the {{count}} selected item.",
+        "description_other": "Change the tags on all {{count}} selected items.",
+        "mode": "Change",
+        "modes": {
+          "add": "Add tags",
+          "remove": "Remove tags"
+        },
+        "tagsLabel": {
+          "add": "Tags to add",
+          "remove": "Tags to remove"
+        },
+        "submit": {
+          "add": "Add tags",
+          "remove": "Remove tags"
+        }
+      },
+      "delete": {
+        "title_one": "Delete {{count}} item?",
+        "title_other": "Delete {{count}} items?",
+        "description": "The items are removed from your inventory. Their past stock changes stay in the activity log.",
+        "confirm_one": "Delete {{count}} item",
+        "confirm_other": "Delete {{count}} items"
+      },
+      "toasts": {
+        "adjusted_one": "Adjusted stock of {{count}} item.",
+        "adjusted_other": "Adjusted stock of {{count}} items.",
+        "tagged_one": "Updated tags on {{count}} item.",
+        "tagged_other": "Updated tags on {{count}} items.",
+        "deleted_one": "Deleted {{count}} item.",
+        "deleted_other": "Deleted {{count}} items."
+      }
+    }
+  },
+  "activity": {
+    "title": "Activity",
+    "description": "The latest {{count}} stock changes, newest first.",
+    "loadFailed": "Your activity couldn't be loaded.",
+    "empty": {
+      "title": "No activity yet",
+      "description": "Every stock change is recorded here."
+    },
+    "columns": {
+      "when": "When",
+      "item": "Item",
+      "change": "Change",
+      "reason": "Reason",
+      "quantityAfter": "Stock after",
+      "note": "Note"
+    },
+    "added": "Added {{quantity}}",
+    "removed": "Removed {{quantity}}",
+    "quantityAfterValue": "{{quantity}} in stock after"
+  },
+  "kits": {
+    "units": {
+      "threeModuleKit": "3-module kits",
+      "fiveModuleKit": "5-module kits",
+      "feederModule": "Feeder modules",
+      "deviceModule": "Device modules",
+      "sortingModule": "Sorting modules"
+    },
+    "unitNames": {
+      "threeModuleKit": "3-module kit",
+      "fiveModuleKit": "5-module kit",
+      "feederModule": "Feeder module",
+      "deviceModule": "Device module",
+      "sortingModule": "Sorting module"
+    },
+    "unitCount": {
+      "threeModuleKit_one": "{{count}} 3-module kit",
+      "threeModuleKit_other": "{{count}} 3-module kits",
+      "fiveModuleKit_one": "{{count}} 5-module kit",
+      "fiveModuleKit_other": "{{count}} 5-module kits",
+      "feederModule_one": "{{count}} feeder module",
+      "feederModule_other": "{{count}} feeder modules",
+      "deviceModule_one": "{{count}} device module",
+      "deviceModule_other": "{{count}} device modules",
+      "sortingModule_one": "{{count}} sorting module",
+      "sortingModule_other": "{{count}} sorting modules"
+    },
+    "capacity": {
+      "heading": "What you can pack now",
+      "description": "Each number assumes all your stock goes to that one thing.",
+      "limitedBy": "Limited by {{name}}",
+      "limitedByMore_one": "Limited by {{name}} and {{count}} other",
+      "limitedByMore_other": "Limited by {{name}} and {{count}} others",
+      "noParts": "No parts set up"
+    },
+    "setup": {
+      "title": "Set up your kit parts",
+      "description": "Edit an item and fill in how many go into each feeder, device and sorting module. Kit stats appear once at least one item is a kit part.",
+      "action": "Go to items"
+    },
+    "planner": {
+      "heading": "Plan kits",
+      "description": "A kit is 1 feeder module, 1 device module and 3 or 5 sorting modules.",
+      "threeModuleKits": "3-module kits needed",
+      "fiveModuleKits": "5-module kits needed",
+      "empty": "Enter how many kits you need to see what you have and what is missing.",
+      "enough": "You have every part for {{kits}}.",
+      "missing_one": "You are missing {{count}} part for {{kits}}.",
+      "missing_other": "You are missing {{count}} parts for {{kits}}.",
+      "kitsJoin": "{{first}} and {{second}}",
+      "tableCaption": "Parts needed for the planned kits"
+    },
+    "parts": {
+      "part": "Part",
+      "needed": "Needed",
+      "inStock": "In stock",
+      "missing": "Missing",
+      "enough": "Enough",
+      "short": "{{quantity}} short"
+    },
+    "remove": {
+      "open": "Remove from inventory",
+      "title": "Remove from inventory",
+      "description": "Takes the parts for whole kits or single modules out of stock and records it in the activity log.",
+      "buildUnit": "What you packed",
+      "count": "How many",
+      "tableCaption": "Parts this will remove",
+      "noParts": "No items are set up as parts of this yet.",
+      "notEnough": "You do not have enough parts for this.",
+      "submit": "Remove parts",
+      "removed": "Removed the parts for {{units}}."
+    }
+  },
+  "labels": {
+    "print": {
+      "open": "Print labels",
+      "title": "Print labels",
+      "descriptionOne": "A label for {{name}} with a QR code you can scan to change its stock.",
+      "descriptionMany_one": "A label for the {{count}} item shown, with a QR code you can scan to change its stock.",
+      "descriptionMany_other": "Labels for the {{count}} items shown, each with a QR code you can scan to change its stock.",
+      "copies": "Copies each",
+      "labelsAlreadyUsed": "Labels already used",
+      "labelsAlreadyUsedDescription": "For a sheet you have started: how many labels are already peeled off, counting left to right, top to bottom. Printing starts on the next one.",
+      "preview": "Preview at actual size",
+      "sheetHint": "For 3/4 × 2 1/4 inch return address labels, 30 per Letter sheet (Avery 6870 layout). Print at 100% or Actual size, not Fit to page.",
+      "submit": "Print",
+      "submitCount_one": "Print {{count}} label on {{sheets}}",
+      "submitCount_other": "Print {{count}} labels on {{sheets}}",
+      "sheetCount_one": "{{count}} sheet",
+      "sheetCount_other": "{{count}} sheets"
+    }
+  },
+  "scan": {
+    "title": "Scan",
+    "description": "Scan an item label to change its stock.",
+    "cameraLabel": "Camera view for scanning labels",
+    "status": {
+      "starting": "Starting the camera",
+      "permissionDenied": "Camera access is blocked. Allow the camera for this site in your browser settings, then reload.",
+      "noCamera": "No camera was found on this device.",
+      "insecureContext": "The camera only works over HTTPS. Open the app from its https:// address.",
+      "failed": "The camera could not be started. Close other apps using it, then reload."
+    },
+    "feedback": {
+      "notItemLabel": "That code is not one of your item labels.",
+      "unknownItem": "That label belongs to an item that is no longer in your inventory."
+    },
+    "lastScanned": {
+      "heading": "Last scanned",
+      "empty": "Nothing scanned yet."
+    },
+    "howTo": {
+      "heading": "How it works",
+      "print": "Print labels from the Items page and stick them on your bins or shelves.",
+      "point": "Point the camera at a label so the QR code sits inside the frame.",
+      "adjust": "Add or remove stock in the dialog that opens, then scan the next one."
+    }
+  }
+}

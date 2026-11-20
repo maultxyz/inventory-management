@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1795202032468,
+      "tag": "0000_real_psylocke",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1795204626361,
+      "tag": "0001_glorious_nebula",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1795209257898,
+      "tag": "0002_flawless_silhouette",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1795209513444,
+      "tag": "0003_good_ravenous",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1795209514421,
+      "tag": "0004_wet_famine",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1795210998442,
+      "tag": "0005_polite_wiccan",
+      "breakpoints": true
+    }
+  ]
+}
