@@ -47,7 +47,8 @@ import {
   IconSearchOff,
 } from "@tabler/icons-react";
 import { useEffect, useMemo, useState } from "react";
-import { tagsOfItems } from "@inventory/shared";
+import { formatCurrencyFromCents } from "@/lib/format";
+import { tagsOfItems, totalStockValueCentsOf } from "@inventory/shared";
 import { useTranslation } from "react-i18next";
 import { useSearchParams } from "react-router-dom";
 
@@ -231,13 +232,25 @@ export default function ItemsPage() {
                 />
               ) : (
                 <div className="flex items-center justify-between gap-3">
-                  <p role="status" className="text-xs text-foreground/70">
-                    {hasActiveItemFilters(filters)
-                      ? t("items.countFiltered", {
-                          shown: shownItems.length,
-                          total: items.length,
-                        })
-                      : t("items.count", { count: items.length })}
+                  <p
+                    role="status"
+                    className="flex flex-wrap gap-x-3 text-xs text-foreground/70"
+                  >
+                    <span>
+                      {hasActiveItemFilters(filters)
+                        ? t("items.countFiltered", {
+                            shown: shownItems.length,
+                            total: items.length,
+                          })
+                        : t("items.count", { count: items.length })}
+                    </span>
+                    <span>
+                      {t("items.totalValue", {
+                        value: formatCurrencyFromCents(
+                          totalStockValueCentsOf(shownItems),
+                        ),
+                      })}
+                    </span>
                   </p>
                   <p className="flex items-center gap-1.5 text-xs text-foreground/70 touch:hidden">
                     <HotkeyHint id="itemPrevious" />

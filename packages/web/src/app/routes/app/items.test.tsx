@@ -79,6 +79,7 @@ describe("ItemsPage", () => {
     const outOfStockRow = screen.getByRole("row", { name: /Label printer/ });
     expect(within(outOfStockRow).getByText("Out of stock")).toBeInTheDocument();
     expect(screen.getByText("3 items")).toBeInTheDocument();
+    expect(screen.getByText("Total value $30.00")).toBeInTheDocument();
   });
 
   it("filters the list as the search text changes", async () => {
@@ -88,6 +89,7 @@ describe("ItemsPage", () => {
     expect(screen.getByRole("row", { name: /Packing tape/ })).toBeInTheDocument();
     expect(screen.queryByRole("row", { name: /Box, medium/ })).toBeNull();
     expect(screen.getByText("1 of 3 items")).toBeInTheDocument();
+    expect(screen.getByText("Total value $25.00")).toBeInTheDocument();
   });
 
   it("applies the stock status filter from the URL", () => {

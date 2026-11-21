@@ -33,6 +33,12 @@ export function stockValueCentsOf(
     : 0;
 }
 
+export function totalStockValueCentsOf(
+  items: ReadonlyArray<LotPricing & Pick<InventoryItem, "quantity">>,
+): number {
+  return items.reduce((total, item) => total + stockValueCentsOf(item), 0);
+}
+
 export function isHttpUrl(value: string): boolean {
   try {
     const { protocol } = new URL(value);

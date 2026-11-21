@@ -46,6 +46,7 @@
     "count_one": "{{count}} item",
     "count_other": "{{count}} items",
     "countFiltered": "{{shown}} of {{total}} items",
+    "totalValue": "Total value {{value}}",
     "empty": {
       "title": "No items yet",
       "description": "Add an item to start tracking how much of it you have."

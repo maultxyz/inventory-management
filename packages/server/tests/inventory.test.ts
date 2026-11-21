@@ -11,6 +11,7 @@ import {
   stockValueCentsOf,
   tagsAfterBulkEdit,
   tagsOfItems,
+  totalStockValueCentsOf,
   unitCostCentsOf,
 } from "@inventory/shared";
 import assert from "node:assert/strict";
@@ -54,6 +55,14 @@ test("unit cost and stock value come from the lot price and units per lot", () =
   assert.equal(
     stockValueCentsOf({ lotPriceCents: 0, unitsPerLot: 10, quantity: 40 }),
     0,
+  );
+  assert.equal(
+    totalStockValueCentsOf([
+      { ...bagOfScrews, quantity: 2500 },
+      { lotPriceCents: 1200, unitsPerLot: 1, quantity: 3 },
+      { lotPriceCents: 0, unitsPerLot: 10, quantity: 40 },
+    ]),
+    2248 + 3600,
   );
 });
 
