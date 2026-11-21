@@ -53,6 +53,23 @@ export interface UseQrScannerOptions {
   onScan: (scannedText: string) => void;
 }
 
+export interface DetectedBarcode {
+  rawValue: string;
+}
+
+export interface NativeBarcodeDetector {
+  detect(source: ImageBitmapSource): Promise<DetectedBarcode[]>;
+}
+
+export interface NativeBarcodeDetectorConstructor {
+  new (options: { formats: string[] }): NativeBarcodeDetector;
+  getSupportedFormats(): Promise<string[]>;
+}
+
+export interface WindowWithBarcodeDetector extends Window {
+  BarcodeDetector?: NativeBarcodeDetectorConstructor;
+}
+
 export interface QrScannerViewProps {
   videoRef: RefObject<HTMLVideoElement | null>;
   status: QrScannerStatus;

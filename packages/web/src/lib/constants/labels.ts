@@ -29,6 +29,10 @@ export const DEFAULT_PRINT_LABELS_FORM: PrintLabelsFormValues = {
 };
 
 export const SCAN_ITEM_PARAM = "item";
-export const SCAN_INTERVAL_MS = 120;
-export const SCAN_FRAME_MAX_WIDTH_PX = 800;
+export const SCAN_INTERVAL_MS = 40;
+export const SCAN_CROP_FRACTION = 0.75;
+export const SCAN_CROP_MAX_SIDE_PX = 720;
+export const SCAN_CAMERA_IDEAL_WIDTH_PX = 1920;
+export const SCAN_CAMERA_IDEAL_HEIGHT_PX = 1080;
+export const QR_BARCODE_FORMAT = "qr_code";
 export const SCAN_REPEAT_COOLDOWN_MS = 2500;
