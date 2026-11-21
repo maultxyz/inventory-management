@@ -277,7 +277,8 @@
       "inStock": "In stock",
       "missing": "Missing",
       "enough": "Enough",
-      "short": "{{quantity}} short"
+      "short": "{{quantity}} short",
+      "buy": "Buy"
     },
     "remove": {
       "open": "Remove from inventory",

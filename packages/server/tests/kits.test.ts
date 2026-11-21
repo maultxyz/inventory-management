@@ -23,6 +23,7 @@ function partWith(
     guid: name,
     name,
     quantity,
+    purchaseUrl: null,
     feederModuleQuantity: 0,
     deviceModuleQuantity: 0,
     sortingModuleQuantity: 0,

@@ -12,6 +12,7 @@ type KitPart = Pick<
   | "guid"
   | "name"
   | "quantity"
+  | "purchaseUrl"
   | "feederModuleQuantity"
   | "deviceModuleQuantity"
   | "sortingModuleQuantity"
@@ -83,6 +84,7 @@ export function partNeedsForModules(
       return {
         itemGuid: part.guid,
         itemName: part.name,
+        purchaseUrl: part.purchaseUrl,
         quantityNeeded,
         quantityInStock: part.quantity,
         quantityMissing: Math.max(0, quantityNeeded - part.quantity),

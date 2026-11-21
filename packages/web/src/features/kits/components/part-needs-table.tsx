@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -7,11 +8,17 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { purchaseUrlOf } from "@/features/items/lib/purchase-link";
 import { formatQuantity } from "@/lib/format";
 import type { PartNeedsTableProps } from "@/lib/interfaces/inventory";
+import { IconShoppingCart } from "@tabler/icons-react";
 import { useTranslation } from "react-i18next";
 
-export function PartNeedsTable({ partNeeds, caption }: PartNeedsTableProps) {
+export function PartNeedsTable({
+  partNeeds,
+  caption,
+  showPurchaseLinks = false,
+}: PartNeedsTableProps) {
   const { t } = useTranslation("inventory");
   return (
     <Table>
@@ -26,6 +33,9 @@ export function PartNeedsTable({ partNeeds, caption }: PartNeedsTableProps) {
           <TableHead className="text-right">
             {t("kits.parts.missing")}
           </TableHead>
+          {showPurchaseLinks && (
+            <TableHead className="text-right">{t("kits.parts.buy")}</TableHead>
+          )}
         </TableRow>
       </TableHeader>
       <TableBody>
@@ -51,6 +61,24 @@ export function PartNeedsTable({ partNeeds, caption }: PartNeedsTableProps) {
                 <Badge variant="success">{t("kits.parts.enough")}</Badge>
               )}
             </TableCell>
+            {showPurchaseLinks && (
+              <TableCell className="text-right">
+                {purchaseUrlOf(partNeed) && (
+                  <a
+                    href={purchaseUrlOf(partNeed) ?? undefined}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t("items.actions.buyMoreOf", {
+                      name: partNeed.itemName,
+                    })}
+                    className={buttonVariants({ variant: "ghost" })}
+                  >
+                    <IconShoppingCart aria-hidden />
+                    {t("items.actions.buyMore")}
+                  </a>
+                )}
+              </TableCell>
+            )}
           </TableRow>
         ))}
       </TableBody>

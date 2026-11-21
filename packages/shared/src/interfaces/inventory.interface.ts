@@ -47,6 +47,7 @@ export interface KitCounts {
 export interface PartNeed {
   itemGuid: string;
   itemName: string;
+  purchaseUrl: string | null;
   quantityNeeded: number;
   quantityInStock: number;
   quantityMissing: number;

@@ -123,6 +123,7 @@ export function KitPlanner({ items }: KitPlannerProps) {
         <PartNeedsTable
           partNeeds={partNeeds}
           caption={t("kits.planner.tableCaption")}
+          showPurchaseLinks
         />
       )}
     </div>

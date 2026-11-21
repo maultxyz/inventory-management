@@ -124,6 +124,7 @@ export interface KitPlannerProps {
 export interface PartNeedsTableProps {
   partNeeds: PartNeed[];
   caption: string;
+  showPurchaseLinks?: boolean;
 }
 
 export interface RemoveBuildUnitsDialogProps {
