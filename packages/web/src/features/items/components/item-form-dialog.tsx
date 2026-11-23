@@ -290,7 +290,7 @@ export function ItemFormDialog({
             <legend className="mb-1 text-xs/relaxed font-medium">
               {t("items.form.moduleUsage")}
             </legend>
-            <div className="grid grid-cols-3 gap-3 md:gap-2">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 md:gap-2">
               {MODULE_QUANTITY_FIELDS.map((moduleQuantityField) => (
                 <Controller
                   key={moduleQuantityField}

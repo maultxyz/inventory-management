@@ -1,6 +1,7 @@
 import type {
   BUILD_UNITS,
   BULK_TAG_MODES,
+  MODULE_TYPES,
   STOCK_ADJUSTMENT_REASONS,
   STOCK_MOVEMENT_REASONS,
 } from "../constants/inventory.constant";
@@ -19,6 +20,7 @@ export interface InventoryItem {
   feederModuleQuantity: number;
   deviceModuleQuantity: number;
   sortingModuleQuantity: number;
+  fiveModuleDeviceExtraQuantity: number;
   purchaseUrl: string | null;
   tags: string[];
   notes: string | null;
@@ -27,6 +29,7 @@ export interface InventoryItem {
 }
 
 export type BuildUnit = (typeof BUILD_UNITS)[number];
+export type ModuleType = (typeof MODULE_TYPES)[number];
 export type BulkTagMode = (typeof BULK_TAG_MODES)[number];
 
 export interface BulkItemsResult {
@@ -36,6 +39,7 @@ export interface BulkItemsResult {
 export interface ModuleCounts {
   feederModules: number;
   deviceModules: number;
+  fiveModuleDeviceModules: number;
   sortingModules: number;
 }
 
@@ -51,6 +55,13 @@ export interface PartNeed {
   quantityNeeded: number;
   quantityInStock: number;
   quantityMissing: number;
+}
+
+export interface ModuleChecklistEntry {
+  itemGuid: string;
+  itemName: string;
+  location: string | null;
+  quantityPerModule: number;
 }
 
 export interface BuildCapacity {

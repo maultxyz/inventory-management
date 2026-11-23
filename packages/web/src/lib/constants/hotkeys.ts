@@ -1,5 +1,6 @@
 import {
   ACTIVITY_PATH,
+  CHECKLISTS_PATH,
   HOME_PATH,
   ITEMS_PATH,
   SCAN_PATH,
@@ -44,6 +45,7 @@ export const HOTKEY_GROUP_ORDER: HotkeyGroup[] = [
   "items",
   "stockDialog",
   "overview",
+  "checklists",
   "scan",
 ];
 
@@ -55,6 +57,7 @@ export const HOTKEYS: Record<HotkeyId, HotkeyDefinition> = {
   goOverview: { group: "navigation", keys: [{ key: "g" }, { key: "o" }] },
   goScan: { group: "navigation", keys: [{ key: "g" }, { key: "s" }] },
   goItems: { group: "navigation", keys: [{ key: "g" }, { key: "i" }] },
+  goChecklists: { group: "navigation", keys: [{ key: "g" }, { key: "c" }] },
   goActivity: { group: "navigation", keys: [{ key: "g" }, { key: "a" }] },
   itemNew: { group: "items", keys: [{ key: "n" }] },
   itemsPrintLabels: { group: "items", keys: [{ key: "p" }] },
@@ -78,6 +81,16 @@ export const HOTKEYS: Record<HotkeyId, HotkeyDefinition> = {
   removeBuildUnits: { group: "overview", keys: [{ key: "r" }] },
   planThreeModuleKits: { group: "overview", keys: [{ key: "3" }] },
   planFiveModuleKits: { group: "overview", keys: [{ key: "5" }] },
+  printFeederModuleChecklist: { group: "checklists", keys: [{ key: "f" }] },
+  printThreeModuleDeviceModuleChecklist: {
+    group: "checklists",
+    keys: [{ key: "d" }],
+  },
+  printFiveModuleDeviceModuleChecklist: {
+    group: "checklists",
+    keys: [{ key: "d", shift: true }],
+  },
+  printSortingModuleChecklist: { group: "checklists", keys: [{ key: "s" }] },
   scanAdjustLast: { group: "scan", keys: [{ key: "a" }] },
 };
 
@@ -85,6 +98,7 @@ export const HOTKEY_ROUTES = {
   goOverview: HOME_PATH,
   goScan: SCAN_PATH,
   goItems: ITEMS_PATH,
+  goChecklists: CHECKLISTS_PATH,
   goActivity: ACTIVITY_PATH,
 } as const satisfies Partial<Record<HotkeyId, string>>;
 
@@ -92,6 +106,7 @@ export const NAV_HOTKEY_BY_PATH: Record<string, HotkeyId> = {
   [HOME_PATH]: "goOverview",
   [SCAN_PATH]: "goScan",
   [ITEMS_PATH]: "goItems",
+  [CHECKLISTS_PATH]: "goChecklists",
   [ACTIVITY_PATH]: "goActivity",
 };
 

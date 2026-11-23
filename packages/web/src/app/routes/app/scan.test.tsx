@@ -38,6 +38,7 @@ const items: InventoryItem[] = [
     feederModuleQuantity: 0,
     deviceModuleQuantity: 0,
     sortingModuleQuantity: 0,
+    fiveModuleDeviceExtraQuantity: 0,
     purchaseUrl: null,
     tags: [],
     notes: null,

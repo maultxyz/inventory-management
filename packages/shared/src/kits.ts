@@ -3,7 +3,9 @@ import type {
   BuildUnit,
   InventoryItem,
   KitCounts,
+  ModuleChecklistEntry,
   ModuleCounts,
+  ModuleType,
   PartNeed,
 } from "./interfaces/inventory.interface";
 
@@ -16,14 +18,46 @@ type KitPart = Pick<
   | "feederModuleQuantity"
   | "deviceModuleQuantity"
   | "sortingModuleQuantity"
+  | "fiveModuleDeviceExtraQuantity"
 >;
 
 export const MODULE_COUNTS_BY_BUILD_UNIT: Record<BuildUnit, ModuleCounts> = {
-  threeModuleKit: { feederModules: 1, deviceModules: 1, sortingModules: 3 },
-  fiveModuleKit: { feederModules: 1, deviceModules: 1, sortingModules: 5 },
-  feederModule: { feederModules: 1, deviceModules: 0, sortingModules: 0 },
-  deviceModule: { feederModules: 0, deviceModules: 1, sortingModules: 0 },
-  sortingModule: { feederModules: 0, deviceModules: 0, sortingModules: 1 },
+  threeModuleKit: {
+    feederModules: 1,
+    deviceModules: 1,
+    fiveModuleDeviceModules: 0,
+    sortingModules: 3,
+  },
+  fiveModuleKit: {
+    feederModules: 1,
+    deviceModules: 1,
+    fiveModuleDeviceModules: 1,
+    sortingModules: 5,
+  },
+  feederModule: {
+    feederModules: 1,
+    deviceModules: 0,
+    fiveModuleDeviceModules: 0,
+    sortingModules: 0,
+  },
+  threeModuleDeviceModule: {
+    feederModules: 0,
+    deviceModules: 1,
+    fiveModuleDeviceModules: 0,
+    sortingModules: 0,
+  },
+  fiveModuleDeviceModule: {
+    feederModules: 0,
+    deviceModules: 1,
+    fiveModuleDeviceModules: 1,
+    sortingModules: 0,
+  },
+  sortingModule: {
+    feederModules: 0,
+    deviceModules: 0,
+    fiveModuleDeviceModules: 0,
+    sortingModules: 1,
+  },
 };
 
 export function moduleCountsOfBuildUnits(
@@ -34,6 +68,7 @@ export function moduleCountsOfBuildUnits(
   return {
     feederModules: perUnit.feederModules * count,
     deviceModules: perUnit.deviceModules * count,
+    fiveModuleDeviceModules: perUnit.fiveModuleDeviceModules * count,
     sortingModules: perUnit.sortingModules * count,
   };
 }
@@ -50,6 +85,9 @@ export function moduleCountsOfKits(kitCounts: KitCounts): ModuleCounts {
   return {
     feederModules: threeModuleKits.feederModules + fiveModuleKits.feederModules,
     deviceModules: threeModuleKits.deviceModules + fiveModuleKits.deviceModules,
+    fiveModuleDeviceModules:
+      threeModuleKits.fiveModuleDeviceModules +
+      fiveModuleKits.fiveModuleDeviceModules,
     sortingModules:
       threeModuleKits.sortingModules + fiveModuleKits.sortingModules,
   };
@@ -62,7 +100,8 @@ export function quantityNeededForModules(
   return (
     part.feederModuleQuantity * moduleCounts.feederModules +
     part.deviceModuleQuantity * moduleCounts.deviceModules +
-    part.sortingModuleQuantity * moduleCounts.sortingModules
+    part.sortingModuleQuantity * moduleCounts.sortingModules +
+    part.fiveModuleDeviceExtraQuantity * moduleCounts.fiveModuleDeviceModules
   );
 }
 
@@ -70,7 +109,8 @@ export function isKitPart(part: KitPart): boolean {
   return (
     part.feederModuleQuantity > 0 ||
     part.deviceModuleQuantity > 0 ||
-    part.sortingModuleQuantity > 0
+    part.sortingModuleQuantity > 0 ||
+    part.fiveModuleDeviceExtraQuantity > 0
   );
 }
 
@@ -123,4 +163,20 @@ export function buildCapacityOf(
     buildableCount: hasAssignedParts ? buildableCount : 0,
     limitingItemNames: hasAssignedParts ? limitingItemNames.sort() : [],
   };
+}
+
+export function moduleChecklistOf(
+  parts: (KitPart & Pick<InventoryItem, "location">)[],
+  moduleType: ModuleType,
+): ModuleChecklistEntry[] {
+  const perModule = MODULE_COUNTS_BY_BUILD_UNIT[moduleType];
+  return parts
+    .map((part) => ({
+      itemGuid: part.guid,
+      itemName: part.name,
+      location: part.location,
+      quantityPerModule: quantityNeededForModules(part, perModule),
+    }))
+    .filter((entry) => entry.quantityPerModule > 0)
+    .sort((a, b) => a.itemName.localeCompare(b.itemName));
 }

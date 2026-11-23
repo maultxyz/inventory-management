@@ -1,0 +1,1 @@
+ALTER TABLE "items" ADD COLUMN "five_module_device_extra_quantity" integer DEFAULT 0 NOT NULL;

@@ -58,6 +58,7 @@ function partWith(
     feederModuleQuantity: 0,
     deviceModuleQuantity: 0,
     sortingModuleQuantity: 0,
+    fiveModuleDeviceExtraQuantity: 0,
     purchaseUrl: null,
     tags: [],
     notes: null,
@@ -109,7 +110,7 @@ describe("HomePage kit stats", () => {
       within(tileNamed("Sorting modules")).getByText("6"),
     ).toBeInTheDocument();
     expect(
-      within(tileNamed("Device modules")).getByText(
+      within(tileNamed("Device modules (3-module kit)")).getByText(
         "Limited by Controller board",
       ),
     ).toBeInTheDocument();

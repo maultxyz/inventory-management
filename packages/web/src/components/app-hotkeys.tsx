@@ -23,6 +23,7 @@ export function AppHotkeys() {
     goOverview: go(HOTKEY_ROUTES.goOverview),
     goScan: go(HOTKEY_ROUTES.goScan),
     goItems: go(HOTKEY_ROUTES.goItems),
+    goChecklists: go(HOTKEY_ROUTES.goChecklists),
     goActivity: go(HOTKEY_ROUTES.goActivity),
   });
 

@@ -6,6 +6,7 @@ export type HotkeyGroup =
   | "items"
   | "stockDialog"
   | "overview"
+  | "checklists"
   | "scan";
 
 export type HotkeyId =
@@ -16,6 +17,7 @@ export type HotkeyId =
   | "goOverview"
   | "goScan"
   | "goItems"
+  | "goChecklists"
   | "goActivity"
   | "itemNew"
   | "itemsPrintLabels"
@@ -39,6 +41,10 @@ export type HotkeyId =
   | "removeBuildUnits"
   | "planThreeModuleKits"
   | "planFiveModuleKits"
+  | "printFeederModuleChecklist"
+  | "printThreeModuleDeviceModuleChecklist"
+  | "printFiveModuleDeviceModuleChecklist"
+  | "printSortingModuleChecklist"
   | "scanAdjustLast";
 
 export interface HotkeyCombo {

@@ -4,6 +4,7 @@ export const BUILD_UNIT_NAMES: Record<BuildUnit, string> = {
   threeModuleKit: "3-module kit",
   fiveModuleKit: "5-module kit",
   feederModule: "feeder module",
-  deviceModule: "device module",
+  threeModuleDeviceModule: "device module (3-module kit)",
+  fiveModuleDeviceModule: "device module (5-module kit)",
   sortingModule: "sorting module",
 };

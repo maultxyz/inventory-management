@@ -59,6 +59,10 @@ const itemDetailsShape = {
   feederModuleQuantity: wholeNumberSchema(0, ITEM_MODULE_QUANTITY_MAX),
   deviceModuleQuantity: wholeNumberSchema(0, ITEM_MODULE_QUANTITY_MAX),
   sortingModuleQuantity: wholeNumberSchema(0, ITEM_MODULE_QUANTITY_MAX),
+  fiveModuleDeviceExtraQuantity: wholeNumberSchema(
+    0,
+    ITEM_MODULE_QUANTITY_MAX,
+  ),
   purchaseUrl: optionalTextSchema(ITEM_PURCHASE_URL_MAX_LENGTH).refine(
     (value) => value === "" || isHttpUrl(value),
     { message: formValidationMessage("linkInvalid") },

@@ -4,6 +4,7 @@
     "overview": "Overview",
     "scan": "Scan",
     "items": "Items",
+    "checklists": "Checklists",
     "activity": "Activity"
   },
   "a11y": {
@@ -88,6 +89,7 @@
       "items": "Items page",
       "stockDialog": "In the stock dialog",
       "overview": "Overview page",
+      "checklists": "Checklists page",
       "scan": "Scan page"
     },
     "actions": {
@@ -98,6 +100,7 @@
       "goOverview": "Go to overview",
       "goScan": "Go to scan",
       "goItems": "Go to items",
+      "goChecklists": "Go to checklists",
       "goActivity": "Go to activity",
       "itemNew": "Add an item",
       "itemsPrintLabels": "Print labels for the items shown",
@@ -117,6 +120,10 @@
       "removeBuildUnits": "Remove kits or modules from inventory",
       "planThreeModuleKits": "Enter 3-module kits needed",
       "planFiveModuleKits": "Enter 5-module kits needed",
+      "printFeederModuleChecklist": "Print feeder module checklists",
+      "printThreeModuleDeviceModuleChecklist": "Print device module checklists for 3-module kits",
+      "printFiveModuleDeviceModuleChecklist": "Print device module checklists for 5-module kits",
+      "printSortingModuleChecklist": "Print sorting module checklists",
       "scanAdjustLast": "Adjust the last scanned item again",
       "itemBuyMore": "Open the picked item's purchase link",
       "itemToggleSelected": "Select or unselect the picked item",

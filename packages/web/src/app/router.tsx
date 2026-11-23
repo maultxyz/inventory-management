@@ -3,6 +3,7 @@ import NotFoundPage from "@/app/routes/not-found";
 import { AppLoadingScreen } from "@/components/app-loading-screen";
 import {
   ACTIVITY_PATH,
+  CHECKLISTS_PATH,
   HOME_PATH,
   ITEMS_PATH,
   SCAN_PATH,
@@ -17,6 +18,7 @@ const AppLayout = lazyRoute(() => import("@/app/routes/app/layout"));
 const HomePage = lazyRoute(() => import("@/app/routes/app/home"));
 const ItemsPage = lazyRoute(() => import("@/app/routes/app/items"));
 const ScanPage = lazyRoute(() => import("@/app/routes/app/scan"));
+const ChecklistsPage = lazyRoute(() => import("@/app/routes/app/checklists"));
 const ActivityPage = lazyRoute(() => import("@/app/routes/app/activity"));
 
 function RootLayout() {
@@ -45,6 +47,7 @@ export const routes: RouteObject[] = [
               { path: HOME_PATH, element: <HomePage /> },
               { path: SCAN_PATH, element: <ScanPage /> },
               { path: ITEMS_PATH, element: <ItemsPage /> },
+              { path: CHECKLISTS_PATH, element: <ChecklistsPage /> },
               { path: ACTIVITY_PATH, element: <ActivityPage /> },
             ],
           },

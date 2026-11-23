@@ -20,9 +20,17 @@ export const BUILD_UNITS = [
   "threeModuleKit",
   "fiveModuleKit",
   "feederModule",
-  "deviceModule",
+  "threeModuleDeviceModule",
+  "fiveModuleDeviceModule",
   "sortingModule",
 ] as const;
+
+export const MODULE_TYPES = [
+  "feederModule",
+  "threeModuleDeviceModule",
+  "fiveModuleDeviceModule",
+  "sortingModule",
+] as const satisfies readonly (typeof BUILD_UNITS)[number][];
 
 export const STOCK_MOVEMENT_REASONS = [
   "created",

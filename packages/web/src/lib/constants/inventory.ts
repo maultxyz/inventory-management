@@ -57,6 +57,7 @@ export const EMPTY_ITEM_FORM: CreateItemFormValues = {
   feederModuleQuantity: 0,
   deviceModuleQuantity: 0,
   sortingModuleQuantity: 0,
+  fiveModuleDeviceExtraQuantity: 0,
   purchaseUrl: "",
   tags: [],
   notes: "",
@@ -66,6 +67,7 @@ export const MODULE_QUANTITY_FIELDS = [
   "feederModuleQuantity",
   "deviceModuleQuantity",
   "sortingModuleQuantity",
+  "fiveModuleDeviceExtraQuantity",
 ] as const;
 
 export const EMPTY_KIT_COUNTS: KitCounts = {

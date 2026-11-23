@@ -1,5 +1,6 @@
 import type { NavItemDef } from "@/lib/interfaces/nav";
 import {
+  IconChecklist,
   IconHistory,
   IconLayoutDashboard,
   IconPackages,
@@ -9,12 +10,14 @@ import {
 export const HOME_PATH = "/app/home";
 export const SCAN_PATH = "/app/scan";
 export const ITEMS_PATH = "/app/items";
+export const CHECKLISTS_PATH = "/app/checklists";
 export const ACTIVITY_PATH = "/app/activity";
 
 export const NAV_ITEMS: NavItemDef[] = [
   { to: HOME_PATH, icon: IconLayoutDashboard, labelKey: "nav.overview" },
   { to: SCAN_PATH, icon: IconQrcode, labelKey: "nav.scan" },
   { to: ITEMS_PATH, icon: IconPackages, labelKey: "nav.items" },
+  { to: CHECKLISTS_PATH, icon: IconChecklist, labelKey: "nav.checklists" },
   { to: ACTIVITY_PATH, icon: IconHistory, labelKey: "nav.activity" },
 ];
 

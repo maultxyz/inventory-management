@@ -33,6 +33,9 @@ export const items = pgTable(
     sortingModuleQuantity: integer("sorting_module_quantity")
       .notNull()
       .default(0),
+    fiveModuleDeviceExtraQuantity: integer("five_module_device_extra_quantity")
+      .notNull()
+      .default(0),
     purchaseUrl: text("purchase_url"),
     tags: text("tags")
       .array()

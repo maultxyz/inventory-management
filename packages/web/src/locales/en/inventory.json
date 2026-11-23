@@ -110,7 +110,8 @@
       "feederModuleQuantity": "Feeder",
       "deviceModuleQuantity": "Device",
       "sortingModuleQuantity": "Sorting",
-      "moduleUsageDescription": "How many of this item go into one feeder, device and sorting module. Leave at 0 if it is not a kit part.",
+      "fiveModuleDeviceExtraQuantity": "5-module device extra",
+      "moduleUsageDescription": "How many of this item go into one feeder, device and sorting module, and how many more the device module of a 5-module kit needs on top of the device count. Leave at 0 if it is not a kit part.",
       "purchaseUrl": "Purchase link",
       "purchaseUrlPlaceholder": "https://",
       "lotPrice": "Lot price ({{currency}})",
@@ -224,14 +225,16 @@
       "threeModuleKit": "3-module kits",
       "fiveModuleKit": "5-module kits",
       "feederModule": "Feeder modules",
-      "deviceModule": "Device modules",
+      "threeModuleDeviceModule": "Device modules (3-module kit)",
+      "fiveModuleDeviceModule": "Device modules (5-module kit)",
       "sortingModule": "Sorting modules"
     },
     "unitNames": {
       "threeModuleKit": "3-module kit",
       "fiveModuleKit": "5-module kit",
       "feederModule": "Feeder module",
-      "deviceModule": "Device module",
+      "threeModuleDeviceModule": "Device module (3-module kit)",
+      "fiveModuleDeviceModule": "Device module (5-module kit)",
       "sortingModule": "Sorting module"
     },
     "unitCount": {
@@ -241,8 +244,10 @@
       "fiveModuleKit_other": "{{count}} 5-module kits",
       "feederModule_one": "{{count}} feeder module",
       "feederModule_other": "{{count}} feeder modules",
-      "deviceModule_one": "{{count}} device module",
-      "deviceModule_other": "{{count}} device modules",
+      "threeModuleDeviceModule_one": "{{count}} device module (3-module kit)",
+      "fiveModuleDeviceModule_one": "{{count}} device module (5-module kit)",
+      "threeModuleDeviceModule_other": "{{count}} device modules (3-module kit)",
+      "fiveModuleDeviceModule_other": "{{count}} device modules (5-module kit)",
       "sortingModule_one": "{{count}} sorting module",
       "sortingModule_other": "{{count}} sorting modules"
     },
@@ -256,7 +261,7 @@
     },
     "setup": {
       "title": "Set up your kit parts",
-      "description": "Edit an item and fill in how many go into each feeder, device and sorting module. Kit stats appear once at least one item is a kit part.",
+      "description": "Edit an item and fill in how many go into each feeder, device and sorting module, plus any extra the device module of a 5-module kit needs. Kit stats appear once at least one item is a kit part.",
       "action": "Go to items"
     },
     "planner": {
@@ -337,5 +342,17 @@
       "point": "Point the camera at a label so the QR code sits inside the frame.",
       "adjust": "Add or remove stock in the dialog that opens, then scan the next one."
     }
+  },
+  "checklists": {
+    "title": "Checklists",
+    "description": "Everything that goes into one module. Print puts {{count}} copies on one letter sheet.",
+    "loadFailed": "Could not load your items.",
+    "partCount_one": "{{count}} part",
+    "partCount_other": "{{count}} parts",
+    "noParts": "No items are set up as parts of this module yet.",
+    "print": "Print",
+    "printLabel": "Print {{module}} checklists",
+    "quantity": "{{quantity}} ×",
+    "printedLocation": " ({{location}})"
   }
 }

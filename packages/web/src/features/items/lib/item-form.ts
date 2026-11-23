@@ -19,6 +19,7 @@ export function itemFormValuesOf(
     feederModuleQuantity: item.feederModuleQuantity,
     deviceModuleQuantity: item.deviceModuleQuantity,
     sortingModuleQuantity: item.sortingModuleQuantity,
+    fiveModuleDeviceExtraQuantity: item.fiveModuleDeviceExtraQuantity,
     purchaseUrl: item.purchaseUrl ?? "",
     tags: item.tags,
     notes: item.notes ?? "",

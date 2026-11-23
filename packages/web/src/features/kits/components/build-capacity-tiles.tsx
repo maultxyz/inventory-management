@@ -28,7 +28,7 @@ export function BuildCapacityTiles({ items }: BuildCapacityTilesProps) {
   };
 
   return (
-    <dl className="grid grid-cols-2 gap-2 md:gap-1.5 lg:grid-cols-5">
+    <dl className="grid grid-cols-2 gap-2 md:grid-cols-3 md:gap-1.5 xl:grid-cols-6">
       {capacities.map((capacity) => (
         <StatTile
           key={capacity.buildUnit}

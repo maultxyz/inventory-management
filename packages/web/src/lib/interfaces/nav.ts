@@ -3,7 +3,12 @@ import type { ComponentType, ReactNode } from "react";
 export interface NavItemDef {
   to: string;
   icon: ComponentType<{ className?: string }>;
-  labelKey: "nav.overview" | "nav.scan" | "nav.items" | "nav.activity";
+  labelKey:
+    | "nav.overview"
+    | "nav.scan"
+    | "nav.items"
+    | "nav.checklists"
+    | "nav.activity";
 }
 
 export interface PageHeaderProps {

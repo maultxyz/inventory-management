@@ -353,18 +353,22 @@ code {
   }
 }
 
-.label-print-sheet {
+.label-print-sheet,
+.checklist-print-sheet {
   display: none;
 }
 
 @media print {
-  body:has(> .label-print-sheet) {
+  body:has(> .label-print-sheet),
+  body:has(> .checklist-print-sheet) {
     background: #fff;
   }
-  body:has(> .label-print-sheet) > *:not(.label-print-sheet) {
+  body:has(> .label-print-sheet) > *:not(.label-print-sheet),
+  body:has(> .checklist-print-sheet) > *:not(.checklist-print-sheet) {
     display: none !important;
   }
-  .label-print-sheet {
+  .label-print-sheet,
+  .checklist-print-sheet {
     display: block;
     print-color-adjust: exact;
     -webkit-print-color-adjust: exact;
